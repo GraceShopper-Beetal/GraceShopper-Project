@@ -208,9 +208,6 @@ async function seed() {
       admin: 'n'}),
   ])
 
-  ]);
-
-
   console.log(`seeded ${users.length} users`);
   console.log(`seeded successfully`);
   return {

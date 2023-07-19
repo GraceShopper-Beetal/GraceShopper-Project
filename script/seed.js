@@ -4,6 +4,7 @@ const {
   db,
   models: { User },
 } = require("../server/db");
+const Chips = require("../server/db/models/Chips");
 
 //title, description,size,baked or not baked, ingrediants,nutrional
 
@@ -190,26 +191,26 @@ async function seed() {
 
   // Creating Users
   const users = await Promise.all([
-
-    User.create({ 
-      username: 'cody135', 
-      firstname: 'cody', 
-      lastname: 'doe', 
-      password: '123', 
-      email: 'cody135@gmail.com', 
-      admin: 'y' 
+    User.create({
+      username: "cody135",
+      email: "cody135@gmail.com",
+      password: "123",
+      admin: "y",
     }),
-    User.create({ 
-      username: 'murphy246', 
-      firstname: 'murphy', 
-      lastname: 'hans', 
-      password: '123', 
-      email: 'murphy246@gmail.com', 
-      admin: 'n'}),
-  ])
-
+    User.create({
+      username: "murphy246",
+      email: "murphy246@gmail.com",
+      password: "123",
+      admin: "n",
+    }),
   ]);
 
+  // Creating Product
+  const createdChips = await Promise.all(
+    chips.map((chips) => {
+      return Chips.create(chips);
+    })
+  );
 
   console.log(`seeded ${users.length} users`);
   console.log(`seeded successfully`);

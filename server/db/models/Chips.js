@@ -51,5 +51,5 @@ const Chips = db.define('chips', {
         type: Sequelize.DECIMAL(10,2)
     }
 })
-
+//comment
 module.exports = Chips;

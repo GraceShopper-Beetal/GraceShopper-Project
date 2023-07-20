@@ -203,6 +203,16 @@ async function seed() {
       password: "123",
       admin: "n",
     }),
+<<<<<<< HEAD
+    User.create({ 
+      username: 'murphy246', 
+      firstname: 'murphy', 
+      lastname: 'hans', 
+      password: '123', 
+      email: 'murphy246@gmail.com', 
+      admin: 'n'}),
+  ])
+=======
   ]);
 
   // Creating Product
@@ -211,6 +221,7 @@ async function seed() {
       return Chips.create(chips);
     })
   );
+>>>>>>> main
 
   console.log(`seeded ${users.length} users`);
   console.log(`seeded successfully`);
